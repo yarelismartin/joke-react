@@ -1,4 +1,11 @@
+import getAJoke from '../api/jokeData';
+
 function Home() {
+  const singleJoke = () => {
+    getAJoke().then((jokeObj) => {
+      console.warn(jokeObj);
+    });
+  };
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -10,6 +17,8 @@ function Home() {
       }}
     >
       <h1>Welcome Home!</h1>
+      <h2>Joke</h2>
+      <button type="button" onClick={singleJoke}> Get a joke </button>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from 'react';
-import { PropTypes } from 'react-bootstrap/esm/Image';
+import PropTypes from 'prop-types';
 
 export default function Joke({ joke, btnText }) {
   return (
     <>
       <h1>{joke.setup}</h1>
-      { btnText === 'Get Punchline!' ? <h2>{joke.delivery}</h2> : ''};
+      { btnText !== 'Get Punchline!' ? <h2>{joke.delivery}</h2> : ''}
     </>
   );
 }
